@@ -16,12 +16,7 @@ const Navigation = () => {
             <Nav.Link as={Link} to={"/"}>
               <Routes>
                 <Route path="/flight" element={"Flight-Spark"} />
-                <Route path="/" element={"Trip-Spark"} />
-                <Route path="/car" element={"Car-Spark"} />
-                <Route path="/train" element={"Train-Spark"} />
-                <Route path="/bus" element={"Bus-Spark"} />
-                <Route path="/faq" element={"FAQ-Ques"} />
-                <Route path="/booking" element={"Booking-Page"} />
+                <Route path="*" element={"Trip-Spark"} />
               </Routes>
             </Nav.Link>
           </Navbar.Brand>
@@ -29,7 +24,7 @@ const Navigation = () => {
             <Nav.Link
               className="d-flex align-items-center gap-2"
               as={Link}
-              to={"/flight"}
+              to={"/vehicles/flight"}
             >
               <MdOutlineFlight />
               Flight
@@ -39,7 +34,7 @@ const Navigation = () => {
             <Nav.Link
               className="d-flex align-items-center gap-2"
               as={Link}
-              to={"/train"}
+              to={"/vehicles/train"}
             >
               <FaTrainSubway /> Train
             </Nav.Link>
@@ -48,7 +43,7 @@ const Navigation = () => {
             <Nav.Link
               className="d-flex align-items-center gap-2"
               as={Link}
-              to={"/bus"}
+              to={"/vehicles/bus"}
             >
               <TbBus />
               Bus
@@ -58,7 +53,7 @@ const Navigation = () => {
             <Nav.Link
               className="d-flex align-items-center gap-2"
               as={Link}
-              to={"/car"}
+              to={"/vehicles/car"}
             >
               <FaCarSide /> Car
             </Nav.Link>
@@ -75,7 +70,7 @@ const Navigation = () => {
           </Nav>
           <Nav>
             <Nav.Link as={Link} to={"/create-account"}>
-              Create Accout
+              Create Account
             </Nav.Link>
           </Nav>
           <Nav>

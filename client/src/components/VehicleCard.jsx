@@ -6,8 +6,13 @@ const VehicleCard = (props) => {
   const { vehicle, index } = props;
 
   return (
-    <Col as={motion.div} xl={3} lg={4} md={6} sm={12} className="mb-4">
-      <Card>
+    <Col xl={3} lg={4} md={6} sm={12} className="mb-4">
+      <Card
+        as={motion.div}
+        whileHover={{
+          scale: 1.1,
+        }}
+      >
         <Card.Body key={index}>
           <img
             src={vehicle.img}

@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { FaSearch } from "react-icons/fa";
 import VehicleCard from "./VehicleCard";
 
-const VehicleList = ({ vehicles }) => {
+const VehicleList = ({ vehicles, title }) => {
   const [search, setSearch] = useState("");
 
   const filteredVehicles = useMemo(() => {
@@ -17,7 +17,10 @@ const VehicleList = ({ vehicles }) => {
 
   return (
     <div className=" container mt-5">
-      <div className="row justify-content-end">
+      <div className="row justify-content-between">
+        <div className="col-12 col-sm-6 col-lg-4">
+          <h3 className="text-left">{title}</h3>
+        </div>
         <div className="col-12 col-sm-6 col-lg-4">
           <InputGroup>
             <Form.Control

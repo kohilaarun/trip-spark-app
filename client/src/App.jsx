@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import VehiclePage from "./components/VehiclePage";
 import AccordionBar from "./components/AccordionBar";
 import CreateAccountPage from "./components/CreateAccountPage";
+import LoginForm from "./components/LoginForm";
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/flight" element={<VehiclePage />} />
+          <Route path="/vehicles/:type" element={<VehiclePage />} />
           <Route path="/faq" element={<AccordionBar />} />
           <Route path="/create-account" element={<CreateAccountPage />} />
+          <Route path="/sign-in" element={<LoginForm />} />
         </Routes>
       </div>
     </BrowserRouter>
