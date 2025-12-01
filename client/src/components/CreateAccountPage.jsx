@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const CreateAccountPage = () => {
   const [accountDetails, setAccountDetails] = useState({
@@ -62,6 +63,9 @@ const CreateAccountPage = () => {
           ></Form.Control>
         </Form.Group>
         <Button>Create Account</Button>
+        <p className="text-center">
+          Don't have an account? <Link to="/sign-in">Sign In</Link>
+        </p>
       </Form>
     </div>
   );

@@ -2,6 +2,7 @@ import flightImg from "../assets/vehicles/flight.webp";
 import busImg from "../assets/vehicles/bus.jpeg";
 import carImg from "../assets/vehicles/car.jpg";
 import trainImg from "../assets/vehicles/train.jpg";
+import airindiaImg from "../assets/vehicles/air-india.avif";
 
 export const flightData = [
   {
@@ -12,7 +13,7 @@ export const flightData = [
   },
   {
     brand: "Air India ",
-    img: flightImg,
+    img: airindiaImg,
     price: 6000,
     type: "flight",
   },

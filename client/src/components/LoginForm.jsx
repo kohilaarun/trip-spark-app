@@ -15,7 +15,7 @@ const LoginForm = () => {
     e.preventDefault();
   };
   return (
-    <div className="container d-flex flex-row  flex-grow-1 justify-content-center align-items-center">
+    <div className="container d-flex flex-row  flex-grow-1 justify-content-center align-items-center w-50">
       <Form
         className="border border-1 p-3 shadow rounded w-50 mt-5 d-flex flex-column gap-3"
         onClick={handleSubmit}
@@ -25,6 +25,7 @@ const LoginForm = () => {
           <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
+            name="email"
             placeholder="user@gmail.com"
             onChange={handleChange}
             value={details.email}
@@ -34,6 +35,7 @@ const LoginForm = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
+            name="password"
             placeholder="....."
             onChange={handleChange}
             value={details.password}

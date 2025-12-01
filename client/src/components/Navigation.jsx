@@ -10,10 +10,10 @@ import { Link, Route, Routes } from "react-router-dom";
 const Navigation = () => {
   return (
     <div>
-      <Navbar bg="dark" data-bs-theme="dark" expand="lg">
+      <Navbar bg="primary fs-4" data-bs-theme="dark" expand="lg">
         <Container>
           <Navbar.Brand>
-            <Nav.Link as={Link} to={"/"}>
+            <Nav.Link as={Link} to={"/"} className="fs-1">
               <Routes>
                 <Route path="/flight" element={"Flight-Spark"} />
                 <Route path="*" element={"Trip-Spark"} />
