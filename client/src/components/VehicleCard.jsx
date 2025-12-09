@@ -1,18 +1,13 @@
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
-import { motion } from "motion/react";
+// import { motion } from "motion/react";
 
 const VehicleCard = (props) => {
   const { vehicle, index } = props;
 
   return (
-    <Col xl={3} lg={4} md={6} sm={12} className="mb-4">
-      <Card
-        as={motion.div}
-        whileHover={{
-          scale: 1.1,
-        }}
-      >
+    <Col xl={3} lg={4} md={6} sm={12} className="mb-4 h-100">
+      <Card>
         <Card.Body key={index}>
           <img
             src={vehicle.img}

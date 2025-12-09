@@ -27,11 +27,7 @@ const VehiclePage = () => {
     title = "Bus";
   }
 
-  return (
-    <div>
-      <VehicleList vehicles={vehicles} title={title} />
-    </div>
-  );
+  return <VehicleList vehicles={vehicles} title={title} />;
 };
 
 export default VehiclePage;

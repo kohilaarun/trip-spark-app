@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Page from "./Page";
 
 const LoginForm = () => {
   const [details, setDetails] = useState({
@@ -15,7 +16,7 @@ const LoginForm = () => {
     e.preventDefault();
   };
   return (
-    <div className="container d-flex flex-row  flex-grow-1 justify-content-center align-items-center w-50">
+    <Page>
       <Form
         className="border border-1 p-3 shadow rounded w-50 mt-5 d-flex flex-column gap-3"
         onClick={handleSubmit}
@@ -46,7 +47,7 @@ const LoginForm = () => {
           Don't have an account? <Link to="/create-account">Sign Up</Link>
         </p>
       </Form>
-    </div>
+    </Page>
   );
 };
 

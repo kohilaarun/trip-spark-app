@@ -8,6 +8,7 @@ import AccordionBar from "./components/AccordionBar";
 import CreateAccountPage from "./components/CreateAccountPage";
 import LoginForm from "./components/LoginForm";
 import ContactUs from "./components/ContactUs";
+import BookingPage from "./components/BookingPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/create-account" element={<CreateAccountPage />} />
           <Route path="/sign-in" element={<LoginForm />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/booking" element={<BookingPage />} />
         </Routes>
       </div>
     </BrowserRouter>

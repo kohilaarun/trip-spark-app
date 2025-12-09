@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Page from "./Page";
 
 const CreateAccountPage = () => {
   const [accountDetails, setAccountDetails] = useState({
@@ -16,7 +17,7 @@ const CreateAccountPage = () => {
     e.preventDefault();
   };
   return (
-    <div className="container d-flex flex-row  flex-grow-1 justify-content-center align-items-center">
+    <Page>
       <Form
         className="border border-1 p-3 shadow rounded w-50 mt-5 d-flex flex-column gap-3"
         onClick={handleSubmit}
@@ -64,10 +65,10 @@ const CreateAccountPage = () => {
         </Form.Group>
         <Button>Create Account</Button>
         <p className="text-center">
-          Don't have an account? <Link to="/sign-in">Sign In</Link>
+          Already have an account? <Link to="/sign-in">Sign In</Link>
         </p>
       </Form>
-    </div>
+    </Page>
   );
 };
 

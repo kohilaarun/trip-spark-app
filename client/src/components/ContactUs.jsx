@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import Page from "./Page";
 
 const ContactUs = () => {
   const [contact, setContact] = useState({
@@ -14,7 +15,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="container d-flex flex-row  flex-grow-1 justify-content-center align-items-center w-50">
+    <Page>
       <Form
         className="border border-1 p-3 shadow rounded w-50 mt-5 d-flex flex-column gap-3"
         onClick={handleSubmit}
@@ -43,7 +44,7 @@ const ContactUs = () => {
         </Form.Group>
         <Button>Add Complained</Button>
       </Form>
-    </div>
+    </Page>
   );
 };
 

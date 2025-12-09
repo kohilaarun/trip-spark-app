@@ -16,8 +16,8 @@ const VehicleList = ({ vehicles, title }) => {
   }, [vehicles, search]);
 
   return (
-    <div className=" container mt-5">
-      <div className="row justify-content-between">
+    <>
+      <div className="row justify-content-between align-self-stretch mt-4">
         <div className="col-12 col-sm-6 col-lg-4">
           <h3 className="text-left">{title}</h3>
         </div>
@@ -41,7 +41,7 @@ const VehicleList = ({ vehicles, title }) => {
           <VehicleCard vehicle={vehicle} index={index} />
         ))}
       </Row>
-    </div>
+    </>
   );
 };
 

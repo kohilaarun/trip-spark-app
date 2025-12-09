@@ -1,8 +1,32 @@
 import flightImg from "../assets/vehicles/flight.webp";
-import busImg from "../assets/vehicles/bus.jpeg";
-import carImg from "../assets/vehicles/car.jpg";
+import triberImg from "../assets/vehicles/triber.jpg";
 import trainImg from "../assets/vehicles/train.jpg";
 import airindiaImg from "../assets/vehicles/air-india.avif";
+import spicejetImg from "../assets/vehicles/spicejet.jpg";
+import vistaraImg from "../assets/vehicles/vistara.jpg";
+import gofirst from "../assets/vehicles/go-first.jpg";
+import airasiaImg from "../assets/vehicles/airasia.jpg";
+import emiratesImg from "../assets/vehicles/emirates.avif";
+import allianceImg from "../assets/vehicles/alliance-air.avif";
+import lufthansaImg from "../assets/vehicles/lufthansa.webp";
+import marutidzireImg from "../assets/vehicles/marutidzire.jpg";
+import innovaImg from "../assets/vehicles/innova.webp";
+import hondaImg from "../assets/vehicles/honda-city.webp";
+import nexonImg from "../assets/vehicles/nexon.jpg";
+import ecosportImg from "../assets/vehicles/ecosport.webp";
+import hyundvernaImg from "../assets/vehicles/hyundai-verna.webp";
+import mahindraImg from "../assets/vehicles/xuv300.jpg";
+import kiaImg from "../assets/vehicles/kia.jpg";
+//bus
+import krishbusImg from "../assets/vehicles/krish-bus.avif";
+import kpnImg from "../assets/vehicles/kpnTravel.jpg";
+import srsImg from "../assets/vehicles/srsbus.jpeg";
+import neetaImg from "../assets/vehicles/neetabus.jpeg";
+import vrlImg from "../assets/vehicles/vrlbus.jpg";
+import praveenImg from "../assets/vehicles/praveenbus.png";
+import setcImg from "../assets/vehicles/setcbus.jpeg";
+import nationalImg from "../assets/vehicles/nationalbus.png";
+import orangebusImg from "../assets/vehicles/orangebus.jpeg";
 
 export const flightData = [
   {
@@ -19,43 +43,43 @@ export const flightData = [
   },
   {
     brand: " SpiceJet  ",
-    img: flightImg,
+    img: spicejetImg,
     price: 6000,
     type: "flight",
   },
   {
     brand: " Vistara",
-    img: flightImg,
+    img: vistaraImg,
     price: 6000,
     type: "flight",
   },
   {
     brand: "Go First  ",
-    img: flightImg,
+    img: gofirst,
     price: 6000,
     type: "flight",
   },
   {
     brand: "Emirates  ",
-    img: flightImg,
+    img: emiratesImg,
     price: 6000,
     type: "flight",
   },
   {
     brand: "AirAsia  ",
-    img: flightImg,
+    img: airasiaImg,
     price: 6000,
     type: "flight",
   },
   {
     brand: "Alliance Air  ",
-    img: flightImg,
+    img: allianceImg,
     price: 6000,
     type: "flight",
   },
   {
     brand: "Lufthansa  ",
-    img: flightImg,
+    img: lufthansaImg,
     price: 6000,
     type: "flight",
   },
@@ -120,56 +144,56 @@ export const trainData = [
 
 export const busData = [
   {
-    brand: "RedBus Volvo AC   ",
-    img: busImg,
+    brand: "Krish Travels  ",
+    img: krishbusImg,
     price: 6000,
     type: "bus",
   },
   {
     brand: "KPN Travels   ",
-    img: busImg,
+    img: kpnImg,
     price: 6000,
     type: "bus",
   },
   {
     brand: "SRS Travels   ",
-    img: busImg,
+    img: srsImg,
     price: 6000,
     type: "bus",
   },
   {
     brand: "Neeta Travels   ",
-    img: busImg,
+    img: neetaImg,
     price: 6000,
     type: "bus",
   },
   {
     brand: "VRL Travels   ",
-    img: busImg,
+    img: vrlImg,
     price: 6000,
     type: "bus",
   },
   {
     brand: "Parveen Travels   ",
-    img: busImg,
+    img: praveenImg,
     price: 6000,
     type: "bus",
   },
   {
     brand: "SETC Sleeper   ",
-    img: busImg,
+    img: setcImg,
     price: 6000,
     type: "bus",
   },
   {
     brand: "National Travels   ",
-    img: busImg,
+    img: nationalImg,
     price: 6000,
     type: "bus",
   },
   {
     brand: "Orange Travels   ",
-    img: busImg,
+    img: orangebusImg,
     price: 6000,
     type: "bus",
   },
@@ -178,55 +202,55 @@ export const busData = [
 export const carData = [
   {
     brand: "Maruti Dzire   ",
-    img: carImg,
+    img: marutidzireImg,
     price: 6000,
     type: "flight",
   },
   {
     brand: " Toyota Innova  ",
-    img: carImg,
+    img: innovaImg,
     price: 6000,
     type: "car",
   },
   {
     brand: " Honda City  ",
-    img: carImg,
+    img: hondaImg,
     price: 6000,
     type: "car",
   },
   {
     brand: " Tata Nexon  ",
-    img: carImg,
+    img: nexonImg,
     price: 6000,
     type: "car",
   },
   {
     brand: " Ford EcoSport  ",
-    img: carImg,
+    img: ecosportImg,
     price: 6000,
     type: "car",
   },
   {
     brand: " Hyundai Verna ",
-    img: carImg,
+    img: hyundvernaImg,
     price: 6000,
     type: "car",
   },
   {
     brand: " Mahindra XUV300   ",
-    img: carImg,
+    img: mahindraImg,
     price: 6000,
     type: "car",
   },
   {
     brand: " Kia Seltos  ",
-    img: carImg,
+    img: kiaImg,
     price: 6000,
     type: "car",
   },
   {
     brand: "Renault Triber  ",
-    img: carImg,
+    img: triberImg,
     price: 6000,
     type: "car",
   },
