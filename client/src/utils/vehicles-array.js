@@ -33,7 +33,7 @@ import tejasTrain from "../assets/vehicles/tejastrain.jpg";
 import krishbusImg from "../assets/vehicles/krish-bus.avif";
 import kpnImg from "../assets/vehicles/kpnTravel.jpg";
 import srsImg from "../assets/vehicles/srsbus.jpeg";
-import neetaImg from "../assets/vehicles/neetabus.jpeg";
+import neetaImg from "../assets/vehicles/neetaBus.jpeg";
 import sreeImg from "../assets/vehicles/sreebus.webp";
 import praveenImg from "../assets/vehicles/praveenbus.png";
 import lionImg from "../assets/vehicles/lionbus.avif";
