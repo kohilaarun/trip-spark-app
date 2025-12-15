@@ -5,8 +5,9 @@ import {
   carData,
   flightData,
   trainData,
-} from "../constants/vehicles-array";
+} from "../utils/vehicles-array";
 import { useParams } from "react-router-dom";
+import Page from "./Page";
 
 const VehiclePage = () => {
   const { type } = useParams();
@@ -27,7 +28,11 @@ const VehiclePage = () => {
     title = "Bus";
   }
 
-  return <VehicleList vehicles={vehicles} title={title} />;
+  return (
+    <Page>
+      <VehicleList vehicles={vehicles} title={title} />
+    </Page>
+  );
 };
 
 export default VehiclePage;

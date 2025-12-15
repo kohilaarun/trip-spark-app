@@ -2,8 +2,10 @@ import React from "react";
 
 const Page = ({ children }) => {
   return (
-    <div className="container d-flex flex-column justify-content-center align-items-center ">
-      {children}
+    <div className="page-container flex-grow-1 position-relative">
+      <main className="container d-flex flex-column justify-content-center align-items-center ">
+        {children}
+      </main>
     </div>
   );
 };

@@ -1,9 +1,9 @@
 import React from "react";
-import { Carousel } from "react-bootstrap";
-import { carData, trainData } from "../constants/vehicles-array";
+import { Badge, Carousel } from "react-bootstrap";
+import { carData, trainData } from "../utils/vehicles-array";
 
 const styles = {
-  img: { height: "80vh" },
+  img: { maxHeight: "80vh", aspectRatio: "16/9" },
 };
 
 const vehicles = [...trainData, ...carData];
@@ -19,13 +19,15 @@ const HomeCarousel = () => {
             style={styles.img}
             className="object-fit-cover w-100"
           />
-          <Carousel.Caption>
-            <h3>{vehicle.brand}</h3>
-            <p>
-              {vehicle.price.toLocaleString("en-IN", {
-                style: "currency",
-                currency: "INR",
-              })}
+          <Carousel.Caption className="d-flex flex-column rounded align-items-center">
+            <h3 className="fs-1 carousal-caption ">{vehicle.brand}</h3>
+            <p className="fs-3">
+              <Badge>
+                {vehicle.price.toLocaleString("en-IN", {
+                  style: "currency",
+                  currency: "INR",
+                })}
+              </Badge>
             </p>
           </Carousel.Caption>
         </Carousel.Item>

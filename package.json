@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "server": "dotenvx run -- nodemon server.js"
+    "server": "dotenvx run -- nodemon server.js",
+    "react": "npm run dev --prefix client",
+    "mongod": "mongod --dbpath /Volumes/kohila/data/db"
   },
   "author": "",
   "license": "ISC",

@@ -19,7 +19,7 @@ const VehicleList = ({ vehicles, title }) => {
     <>
       <div className="row justify-content-between align-self-stretch mt-4">
         <div className="col-12 col-sm-6 col-lg-4">
-          <h3 className="text-left">{title}</h3>
+          <h3 className="text-left cards-name">{title}</h3>
         </div>
         <div className="col-12 col-sm-6 col-lg-4">
           <InputGroup>

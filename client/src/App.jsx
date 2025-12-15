@@ -1,19 +1,24 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./App.scss";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import VehiclePage from "./components/VehiclePage";
 import AccordionBar from "./components/AccordionBar";
 import CreateAccountPage from "./components/CreateAccountPage";
 import LoginForm from "./components/LoginForm";
-import ContactUs from "./components/ContactUs";
 import BookingPage from "./components/BookingPage";
+import { useState } from "react";
+import { authContext } from "./contexts/authContext";
+import FooterPage from "./components/FooterPage";
+
+const { Provider } = authContext;
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
-    <BrowserRouter>
-      <div>
+    <Provider value={{ isLoggedIn, setIsLoggedIn }}>
+      <div className="d-flex flex-column min-vh-100">
         <Navigation />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -21,11 +26,11 @@ function App() {
           <Route path="/faq" element={<AccordionBar />} />
           <Route path="/create-account" element={<CreateAccountPage />} />
           <Route path="/sign-in" element={<LoginForm />} />
-          <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/booking" element={<BookingPage />} />
         </Routes>
+        <FooterPage />
       </div>
-    </BrowserRouter>
+    </Provider>
   );
 }
 

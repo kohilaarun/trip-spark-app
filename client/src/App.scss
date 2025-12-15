@@ -1,0 +1,71 @@
+$primary: purple;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+  --bs-primary: pink;
+}
+
+@font-face {
+  font-family: higelak;
+  src: url(./assets/fonts/higelak/Higelak.otf);
+}
+@font-face {
+  font-family: skyfont;
+  src: url(./assets/fonts/skyfont/Skyfont-NonCommercial.otf);
+}
+
+.navbar-nav .nav-link:hover,
+a:hover,
+.contact-btn:hover {
+  color: $white;
+}
+.brand-name {
+  font-family: higelak;
+  font-size: 62px;
+  line-height: 1;
+}
+header {
+  background-image: linear-gradient(to bottom, $indigo-500, $indigo-700);
+}
+
+.contact-btn:hover {
+  cursor: pointer;
+}
+.offcanvas {
+  background-color: $light;
+}
+.contact-us {
+  color: #3b85a1;
+}
+.cards-name {
+  font-family: higelak;
+  font-size: 80px;
+  line-height: 1;
+  color: $indigo-700;
+}
+.cards-col {
+  box-shadow: 0px 0px 2px #000000aa;
+}
+.cards-col:hover {
+  transform: translate(5px, -5px);
+  box-shadow: -5px 5px 10px #000000aa;
+  transition: all 0.2s;
+}
+.page-container {
+  background-image: linear-gradient(172deg, $indigo-400, #ffffff00);
+}
+.nav-link {
+  color: $gray-400;
+}
+
+.footer.nav-link {
+  color: $indigo-300;
+}
+.footer.nav-link:hover,
+.footer.nav-link p:hover {
+  color: $indigo-200;
+}
+.carousal-caption {
+  background-image: radial-gradient($primary, transparent);
+}
