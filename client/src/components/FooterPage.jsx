@@ -81,20 +81,19 @@ const FooterPage = () => {
               className="fs-5 p-1 footer d-flex gap-1"
               href="https://www.instagram.com"
             >
-              <FaSquareInstagram size={32} /> https://www.instagram.com
+              <FaSquareInstagram size={32} />
             </Nav.Link>
             <Nav.Link
               className="fs-5 p-1 footer d-flex gap-1"
               href="https://www.facebook.com"
             >
               <FaFacebook size={32} />
-              https://www.facebook.com
             </Nav.Link>
             <Nav.Link
               className="fs-5 p-1 footer d-flex gap-1"
               href="https://x.com"
             >
-              <FaTwitter size={32} /> https://x.com
+              <FaTwitter size={32} />
             </Nav.Link>
           </Nav>
         </div>
