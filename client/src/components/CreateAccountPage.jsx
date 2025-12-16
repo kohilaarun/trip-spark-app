@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Col, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Page from "./Page";
 import axios from "axios";
@@ -59,7 +59,7 @@ const CreateAccountPage = () => {
   return (
     <Page>
       <Form
-        className="border border-1 p-3 shadow rounded w-50 mt-5 d-flex flex-column gap-3  bg-light"
+        className="border border-1 p-3 shadow rounded  mt-5 d-flex flex-column gap-3  bg-light col-12 col-md-10 col-lg-6"
         onSubmit={handleSubmit}
       >
         <h2 className="text-center text-success">Create Account</h2>

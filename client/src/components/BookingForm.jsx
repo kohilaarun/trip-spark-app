@@ -47,8 +47,12 @@ const BookingForm = () => {
   return (
     <>
       <Form
-        className="border border-1 p-3 shadow rounded w-50 mt-5 d-flex flex-column gap-2  bg-light"
+        as={Col}
+        className="border border-1 p-3 shadow rounded mt-5 d-flex flex-column gap-2  bg-light col-12 col-md-10 col-lg-6"
         onSubmit={handleSubmit}
+        sm={12}
+        md={10}
+        lg={8}
       >
         <h1 className="text-center text-success">Ticket Booking</h1>
         <Form.Group>
@@ -72,7 +76,7 @@ const BookingForm = () => {
           />
         </Form.Group>
         <Row>
-          <Form.Group as={Col}>
+          <Form.Group as={Col} sm={12} md={6}>
             <Form.Label>Boarding point</Form.Label>
             <Form.Select
               name="boarding"
@@ -91,7 +95,7 @@ const BookingForm = () => {
             </Form.Select>
           </Form.Group>
 
-          <Form.Group as={Col}>
+          <Form.Group as={Col} sm={12} md={6}>
             <Form.Label>Destination point</Form.Label>
             <Form.Select
               name="destination"
@@ -111,7 +115,7 @@ const BookingForm = () => {
           </Form.Group>
         </Row>
         <Row>
-          <Form.Group as={Col}>
+          <Form.Group as={Col} sm={12} md={6}>
             <Form.Label>Travel Date</Form.Label>
             <Form.Control
               type="date"
@@ -122,7 +126,7 @@ const BookingForm = () => {
             />
           </Form.Group>
 
-          <Form.Group as={Col}>
+          <Form.Group as={Col} sm={12} md={6}>
             <Form.Label>Travel Type</Form.Label>
             <Form.Select
               name="type"
@@ -153,7 +157,7 @@ const BookingForm = () => {
         </Form.Group>
 
         <Row>
-          <Form.Group as={Col}>
+          <Form.Group as={Col} sm={12} md={6}>
             <Form.Label>Ticket Price</Form.Label>
             <Form.Control
               type="number"
@@ -165,7 +169,7 @@ const BookingForm = () => {
             />
           </Form.Group>
 
-          <Form.Group as={Col}>
+          <Form.Group as={Col} sm={12} md={6}>
             <Form.Label>Payment Mode</Form.Label>
             <Form.Select
               name="payment"
