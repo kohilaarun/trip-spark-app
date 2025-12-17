@@ -42,10 +42,15 @@ const BookingForm = () => {
   const nameError = validateName(bookingDetails.name);
   const addressError = validateAddress(bookingDetails.address);
   const boardingPointError = validateRequired(
-    bookingDetails.boarding,
-    "Boarding Point"
+    bookingDetails.destination,
+    "Destination Point",
   );
-  const isFormValid = !nameError && !addressError && !boardingPointError;
+  const destinationError = validateRequired(
+    bookingDetails.destination,
+    "Destination Point",
+  );
+  const isFormValid =
+    !nameError && !addressError && !boardingPointError && !destinationError;
 
   const handleChange = (e) => {
     setBookingDetails((bookingDetails) => ({
