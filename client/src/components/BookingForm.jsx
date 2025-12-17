@@ -16,17 +16,32 @@ const initialState = {
   price: "",
   payment: "",
 };
+const initialTouched = {
+  name: false,
+  address: false,
+  boarding: false,
+  destination: false,
+  date: false,
+  type: false,
+  passenger: false,
+  price: false,
+  payment: false,
+};
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 const BookingForm = () => {
   const [show, setShow] = useState(false);
   const [showError, setShowError] = useState(false);
-
   const [bookingDetails, setBookingDetails] = useState(initialState);
+  const [touched, setTouched] = useState(initialTouched);
+
+  const isFormValid = true;
+
   const handleChange = (e) => {
     setBookingDetails((bookingDetails) => ({
       ...bookingDetails,
       [e.target.name]: e.target.value,
     }));
+    setTouched({ ...touched, [e.target.name]: true });
   };
 
   const searchVechicles = async () => {
@@ -41,18 +56,26 @@ const BookingForm = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    setTouched({
+      name: true,
+      address: true,
+      boarding: true,
+      destination: true,
+      date: true,
+      type: true,
+      passenger: true,
+      price: true,
+      payment: true,
+    });
+    if (!isFormValid) return;
     searchVechicles();
   };
 
   return (
     <>
       <Form
-        as={Col}
-        className="border border-1 p-3 shadow rounded mt-5 d-flex flex-column gap-2  bg-light col-12 col-md-10 col-lg-6"
+        className="border border-1 p-3 shadow rounded d-flex flex-column gap-2  bg-light col-12 col-md-10 col-lg-6"
         onSubmit={handleSubmit}
-        sm={12}
-        md={10}
-        lg={8}
       >
         <h1 className="text-center text-success">Ticket Booking</h1>
         <Form.Group>

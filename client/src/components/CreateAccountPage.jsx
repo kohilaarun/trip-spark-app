@@ -5,7 +5,12 @@ import Page from "./Page";
 import axios from "axios";
 import { useContext } from "react";
 import { authContext } from "../contexts/authContext";
-import { validateEmail, validateName } from "../utils/validate-functions";
+import {
+  validateAddress,
+  validateEmail,
+  validateName,
+  validatePassword,
+} from "../utils/validate-functions";
 
 const initialState = {
   name: "",
@@ -30,7 +35,11 @@ const CreateAccountPage = () => {
 
   const nameError = validateName(accountDetails.name);
   const emailError = validateEmail(accountDetails.email);
-  const isFormValid = !nameError && !emailError;
+  const passwordError = validatePassword(accountDetails.password);
+  const addressError = validateAddress(accountDetails.address);
+
+  const isFormValid =
+    !nameError && !emailError && !passwordError && !addressError;
 
   const handleChange = (e) => {
     setAccountDetails({ ...accountDetails, [e.target.name]: e.target.value });
@@ -51,15 +60,14 @@ const CreateAccountPage = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTouched({ name: true, email: true });
-    if (isFormValid) {
-      signupRequest();
-    }
+    setTouched({ name: true, email: true, password: true, address: true });
+    if (!isFormValid) return;
+    signupRequest();
   };
   return (
     <Page>
       <Form
-        className="border border-1 p-3 shadow rounded  mt-5 d-flex flex-column gap-3  bg-light col-12 col-md-10 col-lg-6"
+        className="border border-1 p-3 shadow rounded d-flex flex-column gap-3  bg-light col-12 col-md-10 col-lg-6"
         onSubmit={handleSubmit}
       >
         <h2 className="text-center text-success">Create Account</h2>
@@ -94,6 +102,7 @@ const CreateAccountPage = () => {
             value={accountDetails.password}
             onChange={handleChange}
           ></Form.Control>
+          {touched.password && <p className="text-danger">{passwordError}</p>}
         </Form.Group>
         <Form.Group>
           <Form.Label>Address</Form.Label>
@@ -104,6 +113,7 @@ const CreateAccountPage = () => {
             value={accountDetails.address}
             onChange={handleChange}
           ></Form.Control>
+          {touched.address && <p className="text-danger">{addressError}</p>}
         </Form.Group>
         <Button type="submit" className="btn-success">
           Create Account

@@ -5,7 +5,7 @@ import Page from "./Page";
 const AccordionBar = () => {
   return (
     <Page>
-      <div className="border border-1 p-3 shadow rounded w-50 mt-5 d-flex flex-column gap-2  bg-light">
+      <div className="border border-1 p-3 shadow rounded w-50 d-flex flex-column gap-2  bg-light">
         <h2 className="mb-4 text-center text-success">FAQ Question</h2>
         <Accordion defaultActiveKey={0}>
           <Accordion.Item eventKey="one">

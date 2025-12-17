@@ -3,17 +3,34 @@ import { Button, Form, Offcanvas } from "react-bootstrap";
 import { useState } from "react";
 import axios from "axios";
 import { MdOutlineEmail } from "react-icons/md";
+import { validateEmail, validateMessage } from "../utils/validate-functions";
+import { validatePhone } from "../utils/validate-functions";
 
-const initialState = { email: "", phone: "", massage: "" };
+const initialState = { email: "", phone: "", message: "" };
+
+const initialTouched = {
+  email: false,
+  phone: false,
+  message: false,
+};
+
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const ContactUs = () => {
   const [show, setShow] = useState(false);
   const [contact, setcontact] = useState(initialState);
+  const [touched, setTouched] = useState(initialTouched);
 
   const handleChange = (e) => {
     setcontact({ ...contact, [e.target.name]: e.target.value });
+    setTouched({ ...touched, [e.target.name]: true });
   };
+
+  const emailErr = validateEmail(contact.email);
+  const phoneErr = validatePhone(contact.phone);
+  const messageErr = validateMessage(contact.message);
+  const isFormValid = !emailErr && !phoneErr && !messageErr;
+
   const sendFeedback = async () => {
     try {
       await axios.post(`${BACKEND_URL}/api/contact`, { contact });
@@ -25,6 +42,8 @@ const ContactUs = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    setTouched({ email: true, phone: true, message: true });
+    if (!isFormValid) return;
     sendFeedback();
   };
   const handleClick = () => setShow(true);
@@ -63,8 +82,8 @@ const ContactUs = () => {
                 name="email"
                 onChange={handleChange}
                 value={contact.email}
-                required
               />
+              {touched.email && <p className="text-danger">{emailErr}</p>}
             </Form.Group>
             <Form.Group>
               <Form.Control
@@ -73,18 +92,19 @@ const ContactUs = () => {
                 name="phone"
                 onChange={handleChange}
                 value={contact.phone}
-                required
               />
+              {touched.phone && <p className="text-danger">{phoneErr}</p>}
             </Form.Group>
             <Form.Group>
               <Form.Control
                 as="textarea"
                 placeholder="FeedBack"
-                name="massage"
+                name="message"
                 onChange={handleChange}
                 rows={5}
-                required
+                value={contact.message}
               />
+              {touched.message && <p className="text-danger">{messageErr}</p>}
             </Form.Group>
             <Button type="submit" className="btn-success">
               Add Complaint
