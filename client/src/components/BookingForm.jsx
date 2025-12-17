@@ -4,6 +4,11 @@ import { useState } from "react";
 import axios from "axios";
 import AlertToast from "./AlertToast";
 import { TbRuler } from "react-icons/tb";
+import {
+  validateAddress,
+  validateName,
+  validateRequired,
+} from "../utils/validate-functions";
 
 const initialState = {
   name: "",
@@ -34,7 +39,13 @@ const BookingForm = () => {
   const [bookingDetails, setBookingDetails] = useState(initialState);
   const [touched, setTouched] = useState(initialTouched);
 
-  const isFormValid = true;
+  const nameError = validateName(bookingDetails.name);
+  const addressError = validateAddress(bookingDetails.address);
+  const boardingPointError = validateRequired(
+    bookingDetails.boarding,
+    "Boarding Point"
+  );
+  const isFormValid = !nameError && !addressError && !boardingPointError;
 
   const handleChange = (e) => {
     setBookingDetails((bookingDetails) => ({
@@ -79,13 +90,13 @@ const BookingForm = () => {
       >
         <h1 className="text-center text-success">Ticket Booking</h1>
         <Form.Group>
-          <Form.Label>Customer Name</Form.Label>
+          <Form.Label htmlFor="name">Customer Name</Form.Label>
           <Form.Control
             type="text"
+            id="name"
             name="name"
             value={bookingDetails.name}
             onChange={handleChange}
-            required
           />
         </Form.Group>
         <Form.Group>
@@ -95,7 +106,6 @@ const BookingForm = () => {
             name="address"
             value={bookingDetails.address}
             onChange={handleChange}
-            required
           />
         </Form.Group>
         <Row>
@@ -116,6 +126,9 @@ const BookingForm = () => {
               <option value="delhi"> Delhi</option>
               <option value="hyderabad"> Hyderabad</option>
             </Form.Select>
+            {touched.boarding && (
+              <p className="text-danger">{boardingPointError}</p>
+            )}
           </Form.Group>
 
           <Form.Group as={Col} sm={12} md={6}>
@@ -145,7 +158,6 @@ const BookingForm = () => {
               name="date"
               value={bookingDetails.date}
               onChange={handleChange}
-              required
             />
           </Form.Group>
 
@@ -188,7 +200,6 @@ const BookingForm = () => {
               value={bookingDetails.price}
               onChange={handleChange}
               min={0}
-              required
             />
           </Form.Group>
 

@@ -87,3 +87,13 @@ export const validateMessage = (value) => {
 
   return error;
 };
+
+export const validateRequired = (value, fieldName) => {
+  let error = "";
+
+  if (value === "") {
+    error = `${fieldName} is required`;
+  }
+
+  return error;
+};
