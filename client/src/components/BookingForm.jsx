@@ -154,7 +154,7 @@ const BookingForm = () => {
               <option value="hyderabad"> Hyderabad</option>
             </Form.Select>
             {touched.destination && (
-              <p className="text-danger">{destinationPointError}</p>
+              <p className="text-danger">{destinationError}</p>
             )}
           </Form.Group>
         </Row>
