@@ -9,6 +9,8 @@ import {
   validateName,
   validateRequired,
 } from "../utils/validate-functions";
+import { FaArrowLeft } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const initialState = {
   name: "",
@@ -93,7 +95,14 @@ const BookingForm = () => {
         className="border border-1 p-3 shadow rounded d-flex flex-column gap-2  bg-light col-12 col-md-10 col-lg-6"
         onSubmit={handleSubmit}
       >
-        <h1 className="text-center text-success">Ticket Booking</h1>
+        <div className="d-flex flex-row align-items-center justify-content-center">
+          <Button variant="success" as={Link} to={-1}>
+            <FaArrowLeft />
+          </Button>
+          <h1 className="text-center text-success flex-grow-1">
+            Ticket Booking
+          </h1>
+        </div>
         <Form.Group>
           <Form.Label htmlFor="name">Customer Name</Form.Label>
           <Form.Control

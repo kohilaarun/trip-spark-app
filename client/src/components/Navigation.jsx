@@ -87,6 +87,14 @@ const Navigation = () => {
                   <Nav.Link
                     className="d-flex align-items-center gap-1"
                     as={Link}
+                    to={"/my-booking"}
+                  >
+                    My Booking
+                  </Nav.Link>
+
+                  <Nav.Link
+                    className="d-flex align-items-center gap-1"
+                    as={Link}
                     to={"/faq"}
                   >
                     <FaQq /> FAQ
