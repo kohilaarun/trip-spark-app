@@ -45,11 +45,11 @@ const BookingForm = () => {
   const addressError = validateAddress(bookingDetails.address);
   const boardingPointError = validateRequired(
     bookingDetails.destination,
-    "Destination Point",
+    "Destination Point"
   );
   const destinationError = validateRequired(
     bookingDetails.destination,
-    "Destination Point",
+    "Destination Point"
   );
   const isFormValid =
     !nameError && !addressError && !boardingPointError && !destinationError;
@@ -62,7 +62,7 @@ const BookingForm = () => {
     setTouched({ ...touched, [e.target.name]: true });
   };
 
-  const searchVechicles = async () => {
+  const bookVehicle = async () => {
     try {
       await axios.post(`${BACKEND_URL}/api/booking`, { bookingDetails });
       setBookingDetails(initialState);
@@ -86,7 +86,7 @@ const BookingForm = () => {
       payment: true,
     });
     if (!isFormValid) return;
-    searchVechicles();
+    bookVehicle();
   };
 
   return (
